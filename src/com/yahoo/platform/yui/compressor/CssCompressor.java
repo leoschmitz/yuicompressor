@@ -484,7 +484,7 @@ public class CssCompressor {
             sb = new StringBuffer(css);
             while (i < sb.length()) {
                 char c = sb.charAt(i++);
-                if (c == '}' && i - linestartpos > linebreakpos) {
+                if ((c == '}' || c == ',') && i - linestartpos > linebreakpos) {
                     sb.insert(i, '\n');
                     linestartpos = i;
                 }
